@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 160 32% 28%;
+    --primary-foreground: 40 25% 97%;
+    --secondary: 40 15% 94%;
+    --secondary-foreground: 222 30% 18%;
+    --muted: 210 12% 93%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 38 72% 52%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 160 32% 28%;
+    --radius: 0.75rem;
+    --izu-mist: 200 35% 92%;
+    --izu-jade: 160 32% 28%;
+    --izu-gold: 38 72% 52%;
+    --izu-sakura: 350 65% 92%;
+    --izu-ink: 222 40% 12%;
+    --izu-mesh-1: 160 25% 88%;
+    --izu-mesh-2: 200 30% 90%;
+    --izu-glass: 0 0% 100% / 0.45;
+  }
+
+  .dark {
+    --background: 222 44% 6%;
+    --foreground: 40 15% 96%;
+    --card: 222 40% 9%;
+    --card-foreground: 40 15% 96%;
+    --popover: 222 40% 9%;
+    --popover-foreground: 40 15% 96%;
+    --primary: 158 42% 42%;
+    --primary-foreground: 222 44% 6%;
+    --secondary: 222 32% 14%;
+    --secondary-foreground: 40 15% 96%;
+    --muted: 222 24% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 38 78% 58%;
+    --accent-foreground: 222 44% 6%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 24% 18%;
+    --input: 222 24% 18%;
+    --ring: 158 42% 42%;
+    --izu-mist: 200 20% 22%;
+    --izu-jade: 158 42% 42%;
+    --izu-gold: 38 78% 58%;
+    --izu-sakura: 350 35% 22%;
+    --izu-ink: 40 15% 96%;
+    --izu-mesh-1: 160 20% 14%;
+    --izu-mesh-2: 220 30% 12%;
+    --izu-glass: 0 0% 100% / 0.06;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Subtle Mount Fuji silhouette in hero/dashboard backgrounds */
+.fuji-bg {
+  background-image: radial-gradient(
+      ellipse 120% 80% at 50% 120%,
+      hsl(var(--primary) / 0.12) 0%,
+      transparent 55%
+    ),
+    radial-gradient(circle at 70% 20%, hsl(var(--accent) / 0.08) 0%, transparent 40%);
+}
+
+.dark .fuji-bg {
+  background-image: radial-gradient(
+      ellipse 100% 70% at 50% 115%,
+      hsl(var(--primary) / 0.25) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 72% 18%, hsl(var(--accent) / 0.12) 0%, transparent 38%);
+}
+
+.glass-panel {
+  @apply border border-white/20 bg-white/60 shadow-glass backdrop-blur-xl dark:border-white/10 dark:bg-zinc-900/50 dark:shadow-glass-lg;
+}
+
+.text-gradient-premium {
+  @apply bg-gradient-to-r from-izu-jade via-emerald-500 to-teal-400 bg-clip-text text-transparent dark:from-emerald-300 dark:via-teal-300 dark:to-cyan-200;
+}
